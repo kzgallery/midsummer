@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mid-summer</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://vr-ugar.github.io/portals/portals.js"></script>
+	<script src="https://vr-ugar.github.io/portals/aim.js"></script>
+	<script src="https://vr-ugar.github.io/portals/a-portal.js"></script>
+  </head>
+  
+  <body>
+    <a-scene background="color: orange" loading-screen="dotsColor: orange; backgroundColor: black">
+      <a-assets>
+		  <img id="1" src="assets/midsummer1.jpg">
+	      <img id="2" src="assets/midsummer2.jpg">
+	      <img id="3" src="assets/midsummer3.jpg">
+	      <img id="4" src="assets/midsummer4.jpg">
+	     	      
+          <audio id="sound" src="assets/Melodic echoes.mp3" preload="auto" loop="true"></audio>
+      </a-assets>
+
+      <a-camera position="0 0 0" wasd-controls="enabled: false">
+		<a-cursor visible="true" color="red"></a-cursor>
+	  	
+	  	<!-- comment out the next line when done -->
+	  	<!-- a-entity position="0 0 -10" aim --> 
+
+      <a-sound src="#sound" autoplay="true" loop="true" positional="false" position="0 2 -1"></a-sound>
+      </a-camera>
+
+		<a-entity id="loc_1" visible="true">
+			<a-sky material="src: #1"></a-sky>
+
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="9.95 -0.58 0.79"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_3"
+				src="#3"
+				position="9.02 -0.74 -4.25"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_4"
+				src="#4"
+				position="-3.96 4.37 -8.08"
+				>
+			</a-portal>
+
+		</a-entity>
+
+
+		<a-entity id="loc_2" visible="false">
+			<a-sky material="src: #2"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="0.77 -1.32 9.88"
+				>
+			</a-portal>
+
+			<a-portal
+				to="loc_3"
+				src="#3"
+				position="-4.34 -1.1 8.94"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_4"
+				src="#4"
+				position="-1.71 0.76 9.82"
+				>
+			</a-portal>
+
+		</a-entity>
+
+
+		<a-entity id="loc_3" visible="false">
+			<a-sky material="src: #3"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="7.01 -0.3 7.12"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="8.61 0.14 -5.08"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_4"
+				src="#4"
+				position="3.12 2.4 9.19"
+				>
+			</a-portal>
+			
+		</a-entity>
+
+
+		<a-entity id="loc_4" visible="false">
+			<a-sky material="src: #4"></a-sky>
+
+			<a-portal
+				to="loc_1"
+				src="#1"
+				position="-9.19 -3.78 -1.08"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_2"
+				src="#2"
+				position="-7.84 -1.45 6.03"
+				>
+			</a-portal>
+			
+			<a-portal
+				to="loc_3"
+				src="#3"
+				position="1.44 -3.78 9.14"
+				>
+			</a-portal>
+
+		</a-entity>
+
+
+    </a-scene>
+  </body>
+</html>
